@@ -1,0 +1,55 @@
+﻿@model UsuariosViewModel
+@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<body class="bg-primary bg-pattern">
+    <div class="account-pages my-5 pt-sm-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center mb-5">
+                        @*<h5 class="font-size-16 text-white-50 mb-4">Libreria</h5>*@
+                    </div>
+                </div>
+            </div>
+            <!-- end row -->
+            <div class="row justify-content-center">
+                <div class="col-xl-5 col-sm-8">
+                    <div class="card">
+                        <div class="card-body p-4">
+                            <div class="p-2">
+                                <h5 class="mb-5 text-center">Inicio de sesion</h5>
+                                <form class="form-horizontal" asp-action="Login" asp-controller="Usuarios" autocomplete="off" method="post">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label asp-for="usu_Email" class="control-label col-md-10"></label>
+                                            <div class="col-md-10">
+                                                <input type="text" asp-for="usu_Email" class="form-control" maxlength="150" />
+                                                <span asp-validation-for="usu_Email" class="text-danger"></span>
+                                            </div>
+                                            <label asp-for="usu_Password" class="control-label col-md-10"></label>
+                                            <div class="col-md-10">
+                                                <input type="password" asp-for="usu_Password" class="form-control" maxlength="150" />
+                                                <span asp-validation-for="usu_Password" class="text-danger"></span>
+                                            </div>
+                                            <div class="mt-4">
+                                                <input type="submit" value="Iniciar sesión" class="btn btn-success btn-block waves-effect waves-light" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>

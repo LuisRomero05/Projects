@@ -1,0 +1,110 @@
+﻿@model PlantillaViewModel
+@{
+    ViewData["Title"] = "Plantilla";
+}
+
+        <div class="container col-lg-10">
+
+
+            <div class="card col">
+                <div class="card-header">
+                    <div class="col-5 col-md-10">
+                    <h4>Insertar Empleado</h4>
+                    </div>
+                </div>
+                <div class="card-body col-9">
+
+                    <form autocomplete="off" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label  class="control-label col-md-2">Hospital</label>
+                            <div class="col-md-10">
+                                <select asp-for="hospi_Id" class="form-control" asp-items="Model.ListadoHos" onchange="UpdatePlantilla()">
+                                    <option>Seleccione Hospital</option>
+                                </select>
+                                <span asp-validation-for="hospi_Id" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="control-label col-md-2">Sala</label>
+                            <div class="col-md-10">
+                                <select asp-for="sala_Id" class="form-control" asp-items="Model.ListadoSala">
+                                    <option>Seleccione Sala</option>
+                                </select>
+                                <span asp-validation-for="sala_Id" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label asp-for="planti_Apellido" class="control-label col-md-2"></label>
+                            <div class="col-md-10">
+                                <input type="text" asp-for="planti_Apellido" class="form-control" maxlength="150" />
+                                <span asp-validation-for="planti_Apellido" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="planti_Funcion" class="control-label col-md-2"></label>
+                            <div class="col-md-10">
+                                <input type="text" asp-for="planti_Funcion" class="form-control" maxlength="150" />
+                                <span asp-validation-for="planti_Funcion" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="planti_Turno" class="control-label col-md-2"></label>
+                            <div class="col-md-10">
+                                <input type="text" asp-for="planti_Turno" class="form-control" maxlength="150" />
+                                <span asp-validation-for="planti_Turno" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="planti_Salario" class="control-label col-md-2"></label>
+                            <div class="col-md-10">
+                                <input type="text" asp-for="planti_Salario" class="form-control" maxlength="150" />
+                                <span asp-validation-for="planti_Salario" class="text-danger"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <br />
+                                <input type="submit" value="Guardar" class="btn btn-sm btn-outline-info" />
+                                <a class="btn btn-sm btn-primary" asp-area="" asp-controller="Plantilla" asp-action="PrintUltId" target="_blank">Ultimo Reporte</a>
+                                <a class="btn btn-sm btn-primary" asp-area="" asp-controller="Plantilla" asp-action="Print" target="_blank">Mostrar Reporte</a>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+
+<script>
+    function UpdatePlantilla() {
+        var idHosp = $("#hospi_Id").val();
+        $.ajax({
+            url: "./ListaPlantilla/" + idHosp,
+            method: "Get",
+            success: function (data) {
+                console.log(data.listadoSala)
+                $("#sala_Id").empty()
+                $.each(data.listadoSala, function (i, listadoSala) {
+                    $("#sala_Id").append($('<option>', {
+                        value: listadoSala.value,
+                        text: listadoSala.text
+                    }));
+                });
+            },
+        });
+    };
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous"></script>

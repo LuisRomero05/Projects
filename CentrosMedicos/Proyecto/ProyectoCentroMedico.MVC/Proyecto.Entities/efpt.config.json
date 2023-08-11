@@ -1,0 +1,67 @@
+﻿{
+   "CodeGenerationMode": 0,
+   "ContextClassName": "CentrosmedicosdbContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Entities",
+   "ProjectRootNamespace": "Proyecto.Entities",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 2,
+   "Tables": [
+      {
+         "Name": "[dbo].[tbAccesos]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbEnfermo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbHospiltales]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbPantallas]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbPlantilla]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbRoles]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbSala]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[tbUsuarios]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "DESKTOP-MAYNORM\\SQLEXPRESS.CentrosMedicosDB",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": false
+}
