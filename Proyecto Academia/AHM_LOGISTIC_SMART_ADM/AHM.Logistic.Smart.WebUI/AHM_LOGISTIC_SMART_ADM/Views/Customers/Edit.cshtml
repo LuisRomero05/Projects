@@ -1,0 +1,652 @@
+﻿@model AHM.Logistic.Smart.Common.Models.CustomerViewModel
+@{
+    ViewData["Title"] = "Clientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Table = "Clientes";
+    var CusNoteNotif = Convert.ToString(TempData["CustomerNotes"]);
+    var CusMeetNotif = Convert.ToString(TempData["CustomerMeetings"]);
+    var CusFileNotif = Convert.ToString(TempData["CustomerFile"]);
+    var CusCallNotif = Convert.ToString(TempData["CustomerCalls"]);
+
+    TempData["Cus_Id"] = Model.cus_Id;
+
+    var filePath = Convert.ToString(TempData["filePath"]);
+    var IdCusReplace = Convert.ToString(TempData["IdCusReplace"]);
+    var filePathTemp = Convert.ToString(TempData["filePathTemp"]);
+}
+<!-- Build -->
+<link rel="stylesheet" href="~/build/css/intltelinput.css">
+<link rel="stylesheet" href="~/build/css/demo.css">
+<div class="page-content-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card m-b-30">
+                <div class="card-header">
+                    <h4 class="card-title font-16 mt-0">Editar cliente</h4>
+                    <div class="card-body">
+                        <form class="form-row" method="post" id="frmEditCustomer">
+                            <input type="hidden" asp-for="cus_Id" />
+                            <input type="hidden" asp-for="cus_IdUserCreate" value="1" />
+                            <input type="hidden" asp-for="cus_IdUserCreate" />
+                            <input type="hidden" asp-for="customerNotes.cus_Id" />
+                            <input type="hidden" asp-for="customerCalls.cus_Id" />
+                            <input type="hidden" asp-for="cus_AssignedUser" id="iduser" />
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <div id="messageCre4">
+                                        <label class="form-label is-required">Usuario a cargo</label>
+                                        <select name="cus_AssignedUser" id="SelectUsuario2" class="form-control" maxlength="1"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" maxlength="200">
+                                    <label class="form-label is-required">Nombre</label>
+                                    <input maxlength="200" type="text" asp-for="cus_Name" class="form-control" autocomplete="off" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div id="messageCre3">
+                                        <label class="form-label is-required">Tipo Canal de Comunicación</label>
+                                        <select asp-for="tyCh_Id" class="form-control">
+                                            <option value="0">Por favor seleccione una opción... </option>
+                                            <option value="1">Correo Electrónico</option>
+                                            <option value="2">WhatsApp</option>
+                                            <option value="3">Facebook</option>
+                                            <option value="4">Llamada Telefónica</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" maxlength="14">
+                                    <label class="form-label is-required">RTN</label>
+                                    <input maxlength="14" type="text" asp-for="cus_RTN" class="form-control" autocomplete="off" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div id="messageCre">
+                                        <label class="form-label is-required">Departamento</label>
+                                        <input type="hidden" asp-for="dep_Id" id="departamento" />
+                                        <select id="SelectDepartments2" class="form-control" maxlength="1" onchange="GetSubMunicipalitiesListCreate4()"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div id="messageCre2">
+                                        <label class="form-label is-required">Municipio</label>
+                                        <input type="hidden" asp-for="mun_Id" id="municipio" />
+                                        <select asp-for="mun_Id" id="SelectMunicipalities2" class="form-control" maxlength="1">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12" maxlength="200">
+                                    <label class="form-label is-required">Dirección</label>
+                                    <textarea maxlength="200" asp-for="cus_Address" class="form-control" autocomplete="off" rows="3"></textarea>
+                                </div>
+                                <div class="form-group col-md-6" maxlength="100">
+                                    <label class="form-label is-required">Email</label>
+                                    <input maxlength="100" type="text" asp-for="cus_Email" class="form-control" autocomplete="off" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div>
+                                        <label class="form-label is-required">Teléfono</label>
+                                        <input type="text" class="form-control " asp-for="cus_Phone" maxlength="30" autocomplete="off" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                        <div style="color: red;" id="cont_PhoneMess1"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div>
+                                        <label class="form-label ">Otro Teléfono</label>
+                                        <input type="text" class="form-control " asp-for="cus_AnotherPhone" maxlength="30" autocomplete="off" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                        <div style="color: red;" id="cont_PhoneMess2"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div>
+                                        <input type="hidden" asp-for="Estado" id="miCheckbox" />
+                                        <label class="form-label">Activo</label><br />
+                                        <label class="switch">
+                                            <input type="checkbox" id="miCheckbox2">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div style="margin: 4% 0% 0% 0%;">
+                                <button type="submit" class="btn btn-secondary" style="margin: 0px 30px 0px 0px;">Aceptar</button>
+                                <a class="btn btn-primary" asp-area="" asp-controller="Customers" asp-action="Index">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <svg class="bi bi-chevron-down col-md-12 flecha" cursor="pointer" data-toggle="collapse" href="#collapseUtilities" role="button" aria-expanded="true" aria-controls="collapseExample" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z" />
+                    </svg>
+                    <div class="collapse show" id="collapseUtilities">
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-link active" id="nav-calls-tab" data-toggle="tab" href="#nav-calls">Llamadas</a>
+                                <a class="nav-link" id="nav-notes-tab" data-toggle="tab" href="#nav-notes">Notas</a>
+                                <a class="nav-link" id="nav-meetings-tab" data-toggle="tab" href="#nav-meetings">Reuniones</a>
+                                <a class="nav-link" id="nav-files-tab" data-toggle="tab" href="#nav-files">Adjuntos</a>
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-calls" role="tabpanel" aria-labelledby="nav-calls-tab">
+                                <div class="carrusel" id="carrusel2">
+                                    @if (Model.customerCalls.calls != null)
+                                    {
+
+                                        @foreach (var call in Model.customerCalls.calls)
+                                        {
+                                            if (Model.cus_Id == call.cus_Id)
+                                            {
+                                                string dateCall = $"{call.cca_Date.Day.ToString()}/{call.cca_Date.Month.ToString()}/{call.cca_Date.Year.ToString()}";
+                                                <div class='card-box-shadow'>
+                                                    <div class='col-md-10 box-shadow-div'>
+                                                        <div class='h5-box'>
+                                                            Tipo de llamada:
+                                                        </div>
+                                                        @call.cati_Description
+                                                        <br />
+                                                        <div class='h5-box'>
+                                                            Resultado:
+                                                        </div>
+                                                        @call.caru_Description
+                                                        <br />
+                                                        <h6>
+                                                            Fecha: @dateCall
+                                                        </h6>
+                                                        <h6>
+                                                            Duracion: @call.cca_StartTime - @call.cca_EndTime
+                                                        </h6>
+                                                    </div>
+                                                    <div class='col-md-2 box-shadow-div' style='padding-top:60px'>
+                                                        <a class='btn btn-sm btn-icon btn-secondary' style='margin-bottom: 5px;' data-toggle='tooltip' data-placement='top' title='' data-original-title='Editar' onclick='ShowModalEditCalls(@call.cca_Id)'>
+                                                            <span class='btn-inner'>
+                                                                <svg width='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                                    <path d='M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                    <path fill-rule='evenodd' clip-rule='evenodd' d='M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                    <path d='M15.1655 4.60254L19.7315 9.16854' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                        <a class='btn btn-sm btn-icon btn-primary' style='margin-top: 5px;' data-toggle='tooltip' data-placement='top' data-original-title='Delete' onclick='DeleteCustomerCalls(@call.cca_Id)'>
+                                                            <span class='btn-inner'>
+                                                                <svg width='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor'>
+                                                                    <path d='M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                    <path d='M20.708 6.23975H3.75' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                    <path d='M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                    }
+                                </div>
+                                @Html.Partial("_CustomerCallsCreate", Model.customerCalls)
+                            </div>
+                            <div class="tab-pane fade" id="nav-notes" role="tabpanel" aria-labelledby="nav-notes-tab">
+                                <div class="carrusel" id="carrusel">
+                                    @if (Model.customerNotes.notes != null)
+                                    {
+
+                                        @foreach (var item in Model.customerNotes.notes)
+                                        {
+                                            if (Model.cus_Id == item.cus_Id)
+                                            {
+                                                string date = $"{item.cun_ExpirationDate.Day.ToString()}/{item.cun_ExpirationDate.Month.ToString()}/{item.cun_ExpirationDate.Year.ToString()}";
+                                                <div class='card-box-shadow'>
+                                                    <div class='col-lg-10 box-shadow-div'>
+                                                        <div class='h5-box'>
+                                                            Descripción:
+                                                        </div>
+                                                        <div class='Descripcion'>
+                                                            @item.cun_Descripcion
+                                                        </div>
+                                                        <div class='row' style='padding-top:10px'>
+                                                            <div class='col-md-6'>
+                                                                <div style='font-size: 20px;font-weight: bold'>
+                                                                    Prioridad: @item.pry_Descripcion
+                                                                </div>
+                                                            </div>
+                                                            <div class='col-md-5' style='font-size:20px;text-align:right'>
+                                                                @date
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class='col-md-2 box-shadow-div' style='padding-top:60px'>
+                                                        <a class='btn btn-sm btn-icon btn-secondary' style='margin-bottom: 5px;' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit' onclick='ShowModalEditNotes(@item.cun_Id)'>
+                                                            <span class='btn-inner'>
+                                                                <svg width='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                                    <path d='M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                    <path fill-rule='evenodd' clip-rule='evenodd' d='M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                    <path d='M15.1655 4.60254L19.7315 9.16854' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                        <a class='btn btn-sm btn-icon btn-primary' style='margin-top: 5px;' data-toggle='tooltip' data-placement='top' data-original-title='Delete' onclick='DeleteCustomerNote(@item.cun_Id)'>
+                                                            <span class='btn-inner'>
+                                                                <svg width='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor'>
+                                                                    <path d='M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                    <path d='M20.708 6.23975H3.75' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                    <path d='M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                    }
+                                </div>
+                                @Html.Partial("_CustomerNotesCreate", Model.customerNotes)
+
+                            </div>
+
+
+                            <div class="tab-pane fade" id="nav-meetings" role="tabpanel" aria-labelledby="nav-meetings-tab">
+                                <div class="carrusel" id="carruselMeetings">
+                                    @if (Model.meetings.meetsDetails != null)
+                                    {
+
+
+                                        @foreach (var meet in Model.meetings.meetsDetails)
+                                        {
+                                            if (meet.cus_Id == Model.cus_Id)
+                                            {
+
+                                                <div class='card-box-shadow'>
+                                                    <div class='col-md-10 box-shadow-div'>
+                                                        <div class='h5-box'>
+                                                            Titulo:
+                                                        </div>
+                                                        @meet.met_Title
+                                                        <br />
+                                                        <h6>@meet.met_StartTime - @meet.met_EndTime</h6>
+                                                    </div>
+                                                    <div class='col-md-2 box-shadow-div' style='padding-top:60px'>
+                                                        <a class='btn btn-sm btn-icon btn-secondary' style='margin-bottom: 5px;' data-toggle='tooltip' data-placement='top' title='' data-original-title='Edit' asp-route-id="@meet.met_Id" asp-area="" asp-controller="Meetings" asp-action="Edit">
+                                                            <span class='btn-inner'>
+                                                                <svg width='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                                                    <path d='M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'></path>
+                                                                    <path fill-rule='evenodd' clip-rule='evenodd' d='M8.82812 10.921L16.3011 3.44799C17.2321 2.51799 18.7411 2.51799 19.6721 3.44799L20.8891 4.66499C21.8201 5.59599 21.8201 7.10599 20.8891 8.03599L13.3801 15.545C12.9731 15.952 12.4211 16.181 11.8451 16.181H8.09912L8.19312 12.401C8.20712 11.845 8.43412 11.315 8.82812 10.921Z' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'></path>
+                                                                    <path d='M15.1655 4.60254L19.7315 9.16854' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                        </a><a class='btn btn-sm btn-icon btn-primary' style='margin-top: 5px;' data-toggle='tooltip' data-placement='top' data-original-title='Delete' onclick='DeleteCustomerMeetings(@meet.met_Id)'>
+                                                            <span class='btn-inner'>
+                                                                <svg width='20' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='currentColor'>
+                                                                    <path d='M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                    <path d='M20.708 6.23975H3.75' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                    <path d='M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'>
+                                                                    </path>
+                                                                </svg>
+                                                            </span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                    }
+                                </div>
+                                @Html.Partial("_MeetingCreate", Model.meetings)
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-files" role="tabpanel" aria-labelledby="nav-file-tab">
+                                @Html.Partial("_CustomerFilesCreate", Model.customerFiles)
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="EditNotes" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title m-0">Editar nota</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <div class="form-group col-md-12">
+                        <label class="form-label is-required">Descripción</label>
+                        <textarea id="cun_Descripcion" maxlength="100" value="" class="form-control" rows="3"></textarea>
+                    </div>
+                    <div class="form-group col-md-12" maxlength="14">
+                        <label class="form-label is-required">Fecha de expiración</label>
+                        <input type="date" id="cun_ExpirationDate" value="" class="form-control" />
+                    </div>
+                    <div class="form-group col-md-12">
+                        <div id="divPrioridadMdl">
+                            <label class="form-label is-required">Prioridad</label>
+                            <select name="pry_Id" id="prioritiesMdl" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="EditNoteConfirm">Aceptar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+
+<div id="EditCalls" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title m-0">Editar llamada</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Tipo de llamada</label>
+                        <select id="CallTypeMdl" class="form-control"></select>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Resultado de la llamada</label>
+                        <select id="CallResultMdl" class="form-control"></select>
+                    </div>
+
+                    <div class="form-group col-md-12" maxlength="14">
+                        <label class="form-label">Fecha</label>
+                        <input type="date" id="cca_DateMdl" class="form-control" />
+                    </div>
+
+                    <div class="form-group col-md-12" maxlength="14">
+                        <label class="form-label">Hora de inicio</label>
+                        <input type="time" id="cca_StartTimeMdl" class="form-control" />
+                    </div>
+
+                    <div class="form-group col-md-12" maxlength="14">
+                        <label class="form-label">Hora de fin</label>
+                        <input type="time" id="cca_EndTimeMdl" class="form-control" />
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label class="form-label">Tipo de negocio</label>
+                        <select id="CallBusinessMdl" class="form-control"></select>
+                    </div>
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="EditCallConfirm">Aceptar</button>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+@section Scripts{
+    <script src="~/build/js/intlTelInput.js"></script>
+
+    <!-- Customer scripts -->
+    <script src="~/js/app/Customers/CustomersEdit.js"></script>
+    <!-- Customer scripts Vistas Parciales -->
+    <script src="~/js/app/CustomerNotes/CustomerNotes.js"></script>
+    <script src="~/js/app/CustomerNotes/CustomerNotesEdit.js"></script>
+    <script src="~/js/app/CustomerNotes/CustomerNotesDelete.js"></script>
+    <script src="~/js/app/CustomersCalls/CustomerCalls.js"></script>
+    <script src="~/js/app/CustomersCalls/CustomerCallsEdit.js"></script>
+    <script src="~/js/app/CustomersCalls/CustomerCallsDelete.js"></script>
+    <script src="~/js/app/CustomerFiles/CustomersFile.js"></script>
+    <script src="~/js/app/CustomerFiles/CustomersFileDelete.js"></script>
+    <script src="~/js/app/Meetings/Meetings.js"></script>
+    <script src="~/js/app/Meetings/MeetingsDelete.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            DropdownsNotes();
+            DropdownCalls();
+            GetDropdowns3();
+        });
+        function DropdownsNotes() {
+            $("#priorities").select2();
+            $("#invitados").select2();
+        }
+        function DropdownCalls() {
+            $("#VCallType").select2();
+            $("#VCallResult").select2();
+            $("#VCallBusiness").select2();
+        }
+        function GetDropdowns3() {
+            $("#CallTypeMdl").select2();
+            $("#CallBusinessMdl").select2();
+            $('#CallResultMdl').select2();
+        }
+    </script>
+
+    <script>
+
+        $(document).ready(function () {
+            var cusNoteNotif = '@CusNoteNotif';
+            var cusMeetNotif = '@CusMeetNotif';
+            var cusFileNotif = '@CusFileNotif';
+            var cusCallNotif = '@CusCallNotif';
+
+            if (cusNoteNotif != "") {
+                if (cusNoteNotif == "Se agrego una nueva nota") {
+                    iziToast.success({
+                        message: `¡${cusNoteNotif}!`
+                    });
+                } else if (cusNoteNotif == "Eliminado") {
+                    Swal.fire({
+                        width: '20%',
+                        height: '20%',
+                        title: '¡Eliminado!',
+                        text: '¡Registro eliminado correctamente!',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                }
+                else if (cusNoteNotif == "Editado") {
+                    iziToast.success({
+                        message: `¡Registro actualizado exitosamente!`
+                    });
+                }
+                else {
+                    iziToast.warning({
+                        title: 'Advertencia',
+                        message: `¡${cusNoteNotif}!`
+                    });
+                }
+                $("#nav-calls-tab").removeClass('active');
+                $("#nav-calls").removeClass('show active');
+                $("#nav-notes-tab").addClass('active');
+                $("#nav-notes").addClass('show active');
+                location.assign("#nav-notes");
+            }
+
+            if (cusMeetNotif != "") {
+                if (cusMeetNotif == "Se agendo una nueva reunion") {
+                    iziToast.success({
+                        message: `¡${cusMeetNotif}!`
+                    });
+                } else if (cusMeetNotif == "Eliminado") {
+                    Swal.fire({
+                        width: '20%',
+                        height: '20%',
+                        title: '¡Eliminado!',
+                        text: '¡Registro eliminado correctamente!',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                } else if (cusMeetNotif == "0") { }
+                else if (cusMeetNotif == "1") {
+                    iziToast.success({
+                        message: "¡Reunion actualizada correctamente!"
+                    });
+                }
+                else {
+                    iziToast.warning({
+                        title: 'Advertencia',
+                        message: `¡${cusMeetNotif}!`
+                    });
+                }
+                $("#nav-calls-tab").removeClass('active');
+                $("#nav-calls").removeClass('show active');
+                $("#nav-meetings-tab").addClass('active');
+                $("#nav-meetings").addClass('show active');
+                location.assign("#nav-meetings");
+
+            }
+
+            if (cusFileNotif != "") {
+                if (cusFileNotif == "Se agrego un nuevo archivo") {
+                    iziToast.success({
+                        message: `¡${cusFileNotif}!`
+                    });
+                } else if (cusFileNotif == "0") {
+                    Swal.fire({
+                        width: '20%',
+                        height: '20%',
+                        title: '¡Reemplazado!',
+                        text: '¡Archivo reemplazado correctamente!',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                }
+                else if (cusFileNotif == "Replace") {
+                    var filePath = '@filePath';
+                    var cusIdR = '@IdCusReplace';
+                    var filePathTemp = '@filePathTemp';
+                    Swal.fire({
+                        width: '20%',
+                        height: '20%',
+                        text: "Este archivo ya existe ¿Deseas reemplazarlo?",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        cancelButtonText: 'Cancelar',
+                        confirmButtonText: 'Aceptar',
+                        confirmButtonColor: '#6c757d',
+                        cancelButtonColor: '#001f52',
+
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+
+                            var data = [
+                                { name: "cfi_Id", value: 0 },
+                                { name: "cfi_fileRoute", value: filePath },
+                                { name: "cus_Id", value: parseInt(cusIdR) },
+                                { name: "cfi_IdUserCreate", value: null },
+                                { name: "cfi_DateCreate", value: null },
+                                { name: "cfi_IdUserModified", value: 0  },
+                                { name: "formFile", value: null },
+                                { name: "href", value: filePathTemp },
+                                { name: "listFile", value: null },
+                            ];
+                            $.ajax({
+                                type: "POST",
+                                url: BaseUrl + "/CustomersFile/DeleteRepleace",
+                                data: data,
+                            }).done(function (data) {
+                                    location.reload();
+                            });
+                        } else {
+                            $.ajax({
+                                type: "DELETE",
+                                url: BaseUrl + "/CustomersFile/DeleteTemp?filePathTemp=" + filePathTemp,
+                            });
+                        }
+                    });
+                } else if (cusFileNotif == "Eliminado") { }
+
+
+
+                else {
+                    iziToast.warning({
+                        title: 'Advertencia',
+                        message: `¡${cusFileNotif}!`
+                    });
+                }
+                $("#nav-calls-tab").removeClass('active');
+                $("#nav-calls").removeClass('show active');
+                $("#nav-files-tab").addClass('active');
+                $("#nav-files").addClass('show active');
+                location.assign("#nav-files");
+            }
+
+            if (cusCallNotif != "") {
+                if (cusCallNotif == "0") {
+                    iziToast.success({
+                        message: `¡Se agrego una nueva Llamada!`
+                    });
+                } else if (cusCallNotif == "1") {
+                    Swal.fire({
+                        width: '20%',
+                        height: '20%',
+                        title: '¡Eliminado!',
+                        text: '¡Registro eliminado correctamente!',
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                } else if (cusCallNotif == "2") {
+                    iziToast.success({
+                        message: `¡Registro actualizado exitosamente!`
+                    });
+                }
+                else {
+                    iziToast.warning({
+                        title: 'Advertencia',
+                        message: `¡${cusCallNotif}!`
+                    });
+                }
+                location.assign("#nav-calls");
+            }
+
+        });
+    </script>
+    <script>
+        function docReady(fn) {
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                setTimeout(fn, 1);
+            } else {
+                document.addEventListener("DOMContentLoaded", fn);
+            }
+        }
+        docReady(function () {
+            Menu('customers');
+        });
+    </script>
+
+    <script>
+        $('.nav-tabs a').click(function () {
+            $(this).tab('show');
+        })
+    </script>
+}

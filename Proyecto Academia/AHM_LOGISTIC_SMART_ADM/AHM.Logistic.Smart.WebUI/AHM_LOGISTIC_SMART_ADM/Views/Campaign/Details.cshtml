@@ -1,0 +1,95 @@
+﻿@model AHM.Logistic.Smart.Common.Models.CampaignViewModel
+@{
+    ViewData["Title"] = "Detalles campaña";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Table = "Campaña";
+}
+<div class="page-content-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card m-b-30">
+                <div class="card-body">
+                    <h4 class="card-title font-16 mt-0">Detalle de campaña</h4>
+                    <div class="card-body">
+                        <div class="row">
+                            <input type="hidden" asp-for="cam_IdUserCreate" value="1" />
+                            <input type="hidden" asp-for="cam_Id" />
+                            <div class="form-group col-md-6">
+                                <label class="form-label">Nombre</label>
+                                <input type="text" asp-for="cam_Nombre" class="form-control" maxlength="100" disabled />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label">Descripción</label>
+                                <input type="text" asp-for="cam_Descripcion" class="form-control" maxlength="100" disabled />
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="form-label">Presentación</label>
+                                <textarea asp-for="cam_Html" disabled></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                @if (ViewBag.Status == "Sin enviar")
+                                {
+                                    <h4>Clientes que recibirán la campaña</h4>
+                                }
+                                else
+                                {
+                                    <h4>Clientes que recibieron la campaña</h4>
+                                }
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-md-12">
+                                <table id="customerSend" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead style="width: 100%;">
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Id asigando</th>
+                                            <th>Nombre</th>
+                                            <th>Tipo de Canal</th>
+                                            <th>RTN</th>
+                                            <th>Departamento</th>
+                                            <th>Municipio</th>
+                                            <th>Email</th>
+                                            <th>Teléfono</th>
+                                            <th>Otro teléfono</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="table-content">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <a class="btn btn-primary" asp-area="" asp-controller="Campaign" asp-action="Index">Regresar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script src="~/js/app/Campaign/CampaignDetails.js"></script>
+    <script>
+        CKEDITOR.replace('cam_Html', {
+
+        });
+
+
+
+    </script>
+    <script>
+        function docReady(fn) {
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                setTimeout(fn, 1);
+            } else {
+                document.addEventListener("DOMContentLoaded", fn);
+            }
+        }
+        docReady(function () {
+            Menu('campaign');
+        });
+    </script>
+}

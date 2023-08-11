@@ -1,0 +1,136 @@
+﻿@model AHM.Logistic.Smart.Common.Models.MeetingsViewModel
+
+
+@{
+    ViewData["Title"] = "Editar reuniones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="page-content-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card m-b-30">
+                <div class="card-header">
+                    <h4 class="card-title font-16 mt-0">Editar Reunión</h4>
+                    <div class="card-body">
+                        <form id="frmEditCustomer">
+                            <input type="hidden" id="cus_Id" asp-for="cus_Id" />
+                            <input type="hidden" id="met_Id" asp-for="met_Id" />
+                            <input type="hidden" id="met_Date" asp-for="met_Date" />
+                            <input type="hidden" id="Mdetails" asp-for="met_details" />
+                            <input type="hidden" value="@DateTime.Now" id="hoy" />
+                            <script>var detallesTabla = [];</script>
+                            @foreach (var item in Model.met_details)
+                            {
+                                <script>
+                                        detallesTabla.push({mix_Id: @item.id });
+                                </script>
+                            }
+                        <div class="row" id="div_addInv">
+                            <div class="form-group col-md-6">
+                                <label class="form-label is-required">Titulo de la reunión</label>
+                                <input type="text" id="met_Title" maxlength="100" asp-for="met_Title" class="form-control" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label is-required">Link de reunion</label>
+                                <input type="text" id="met_MeetingLink" asp-for="met_MeetingLink" class="form-control" />
+                            </div>
+                            <div class="form-group col-md-6" maxlength="14">
+                                <label class="form-label is-required">Tiempo de inicio</label>
+                                <input type="time" id="met_StartTime" asp-for="met_StartTime" class="form-control" />
+                            </div>
+                            <div class="form-group col-md-6" maxlength="14">
+                                <label class="form-label is-required">Tiempo de fin</label>
+                                <input type="time" id="met_EndTime" asp-for="met_EndTime" class="form-control" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label is-required">Fecha</label>
+                                <input asp-for="met_Date" id="Met_DateEdit" class="form-control" type="date" />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="form-label">Invitados</label>
+                                <div class="form-inline">
+                                    <div class="col-md-11" style="padding-left: 0px; padding-right:0px;">
+                                        <select id="invitados" class="form-control">
+                                            <option value="0" selected>Seleccione un invitado...</option>
+                                            @foreach (var item1 in Model.ListCusEmpCon)
+                                            {
+                                                <option value="@item1.Id">@item1.Name</option>
+
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="col-md-1">
+                                        <button type="button" class="btn btn-secondary" onclick="AddInvitadoEdit()">
+                                            <i class="fas fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <table id="TablaInvitados" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                    <thead>
+                                        <tr class="ligth">
+                                            <th>Id</th>
+                                            <th>Invitados</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="TbInvitaciones">
+                                        @foreach (var item2 in Model.met_details)
+                                        {
+                                            <tr>
+                                                <td>@Html.DisplayFor(modelItem => item2.id)</td>
+                                                <td>@Html.DisplayFor(modelItem => item2.name)</td>
+                                                <td>
+                                                    <a class="btn btn-sm btn-icon btn-primary" data-toggle="tooltip" data-placement="top" data-original-title="Delete" onclick="EliminarInvitado(@item2.mde_Id)">
+                                                        <span class="btn-inner">
+                                                            <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" style="color: white;">
+                                                                <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                <path d="M20.708 6.23975H3.75" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                <path d="M17.4406 6.23973C16.6556 6.23973 15.9796 5.68473 15.8256 4.91573L15.5826 3.69973C15.4326 3.13873 14.9246 2.75073 14.3456 2.75073H10.1126C9.53358 2.75073 9.02558 3.13873 8.87558 3.69973L8.63258 4.91573C8.47858 5.68473 7.80258 6.23973 7.01758 6.23973" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            </svg>
+                                                        </span>
+                                                    </a>
+                                                </td>
+                                            </tr>
+
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                            @{TempData["CustomerMeetings"] = "0";}
+                            <div class="col-md-6" style="margin: 4% 0% 0% 0%;">
+                                <button type="button" class="btn btn-secondary" style="margin: 0px 30px 0px 0px;" onclick="ActualizarMeeting()">Aceptar</button>
+                                <a class="btn btn-primary" asp-route-id="@Model.cus_Id" asp-area="" asp-controller="Customers" asp-action="Edit" onclick="@{TempData["CustomerMeetings"] = "0";}">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/jquery.min.js"></script>
+<script src="~/js/app/Meetings/MeetingsEdit.js"></script>
+<script>
+    $(document).ready(function () {
+        GetDropdowns();
+    });
+    function GetDropdowns() {
+        $("#invitados").select2();
+    }
+</script>
+<script>
+    function docReady(fn) {
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+    docReady(function () {
+        Menu('customers');
+    });
+</script>

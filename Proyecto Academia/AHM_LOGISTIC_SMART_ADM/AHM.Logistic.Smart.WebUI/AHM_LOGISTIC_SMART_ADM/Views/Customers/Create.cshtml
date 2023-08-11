@@ -1,0 +1,123 @@
+﻿@model AHM.Logistic.Smart.Common.Models.CustomersModel
+@{
+    ViewData["Title"] = "Crear Cliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Table = "Clientes";
+}
+<!-- Build -->
+<link rel="stylesheet" href="~/build/css/intltelinput.css">
+<link rel="stylesheet" href="~/build/css/demo.css">
+
+<div class="page-content-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card m-b-30">
+                <div class="card-header">
+                    <h4 class="card-title font-16 mt-0">Registrar Cliente</h4>
+                    <div class="card-body">
+                        <form autocomplete="off" method="post" id="frmCreateCustomer">
+                            <div class="row">
+                                <div class="form-group col-md-6">
+                                    <div id="messageCre4">
+                                        <label class="form-label is-required">Usuario a cargo</label>
+                                        <select name="usu_Id" id="SelectUsuario2" class="form-control" maxlength="1"></select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6" maxlength="200">
+                                    <label class="form-label is-required">Nombre</label>
+                                    <input maxlength="200" type="text" asp-for="cus_Name" class="form-control" autocomplete="off" />
+                                    <input type="hidden" asp-for="cus_IdUserCreate" value="1" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div id="messageCre3">
+                                        <label class="form-label is-required">Tipo de Canal de Comunicación</label>
+                                        <select asp-for="tyCh_Id" class="form-control">
+                                            <option value="0">Por favor seleccione una opción... </option>
+                                            <option value="1">Correo Electrónico</option>
+                                            <option value="2">WhatsApp</option>
+                                            <option value="3">Facebook</option>
+                                            <option value="4">Llamada Telefónica</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6" maxlength="14">
+                                    <label class="form-label is-required">RTN</label>
+                                    <input maxlength="14" type="text" asp-for="cus_RTN" class="form-control" autocomplete="off" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div id="messageCre">
+                                        <label class="form-label is-required">Departamento</label>
+                                        <select name="dep_Id" id="SelectDepartments2" class="form-control" maxlength="1" onchange="GetSubMunicipalitiesListCreate2()">
+                                            <option value="0"> Por favor seleccione una opción... </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div id="messageCre2">
+                                        <label class="form-label is-required">Municipio</label>
+                                        <select name="mun_Id" id="SelectMunicipalities2" class="form-control" maxlength="1" disabled>
+                                            <option value="0"> Por favor seleccione una opción... </option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-12" maxlength="200">
+                                    <label class="form-label is-required">Dirección</label>
+                                    <textarea maxlength="200" asp-for="cus_Address" class="form-control" autocomplete="off" rows="3"></textarea>
+                                </div>
+                                <div class="form-group col-md-6" maxlength="100">
+                                    <label class="form-label is-required">Email</label>
+                                    <input maxlength="100" type="text" asp-for="cus_Email" class="form-control" autocomplete="off" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <div>
+                                        <label class="form-label is-required">Teléfono</label>
+                                        <input type="text" class="form-control " asp-for="cus_Phone" maxlength="30" autocomplete="off" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                        <div style="color: red;" id="cont_PhoneMess1"></div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group col-md-6">
+                                    <div>
+                                        <label class="form-label">Otro Teléfono</label>
+                                        <input type="text" class="form-control " asp-for="cus_AnotherPhone" maxlength="30" autocomplete="off" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
+                                        <div style="color: red;" id="cont_PhoneMess2"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="margin: 4% 0% 0% 0%;">
+                                <button type="submit" class="btn btn-secondary" style="margin: 0px 30px 0px 0px;" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseUtilities">Aceptar</button>
+                                <a class="btn btn-primary" asp-area="" asp-controller="Customers" asp-action="Index">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script src="~/js/jquery.min.js"></script>
+    <!-- Customer scripts -->
+    <script src="~/build/js/intlTelInput.js"></script>
+    <script src="~/js/app/Customers/Customers.js"></script>
+    <script src="~/js/app/Customers/CustomersCreate.js"></script>
+
+    <script>
+        function docReady(fn) {
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                setTimeout(fn, 1);
+            } else {
+                document.addEventListener("DOMContentLoaded", fn);
+            }
+        }
+        docReady(function () {
+            Menu('customers');
+        });
+    </script>
+    }

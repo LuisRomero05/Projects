@@ -1,0 +1,62 @@
+﻿@model AHM.Logistic.Smart.Common.Models.CampaignModel
+@{ ViewData["Title"] = "Crear campaña";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Table = "Campaña";
+}
+<div class="page-content-wrapper">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card m-b-30">
+                <div class="card-body">
+                    <h4 class="card-title font-16 mt-0">Registrar campañas</h4>
+                    <div class="card-body">
+                        <form method="post" autocomplete="off" id="frmCreateCampaigns">
+                            <div class="row">
+                                <input type="hidden" asp-for="cam_IdUserCreate" />
+                                <div class="form-group col-md-6">
+                                    <label class="form-label is-required">Nombre</label>
+                                    <input type="text" asp-for="cam_Nombre" class="form-control" maxlength="100" />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label class="form-label is-required">Descripción</label>
+                                    <input type="text" asp-for="cam_Descripcion" class="form-control" maxlength="500" />
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="form-label is-required">Presentación</label>
+                                    <textarea asp-for="cam_Html"></textarea>
+                                    <span id="Errorcam_Html" style="color: red" ;></span>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-secondary" style="margin: 0px 30px 0px 0px;">Aceptar</button>
+                            <a class="btn btn-primary" asp-area="" asp-controller="Campaign" asp-action="Index">Regresar</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script src="~/js/app/Campaign/CampaignCreate.js"></script>
+    <script>
+        CKEDITOR.replace('cam_Html', {
+
+        });
+
+
+
+    </script>
+    <script>
+        function docReady(fn) {
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                setTimeout(fn, 1);
+            } else {
+                document.addEventListener("DOMContentLoaded", fn);
+            }
+        }
+        docReady(function () {
+            Menu('campaign');
+        });
+    </script>
+}

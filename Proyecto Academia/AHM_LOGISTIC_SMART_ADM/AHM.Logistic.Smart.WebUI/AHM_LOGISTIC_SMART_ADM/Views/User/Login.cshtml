@@ -1,0 +1,126 @@
+﻿@model AHM.Logistic.Smart.Common.Models.LoginModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>@ViewData["Title"] - Logistic Smart</title>
+    <meta content="Admin Dashboard" name="description" />
+    <meta content="Themesbrand" name="author" />
+    <link rel="shortcut icon" href="~/images/favicon.ico">
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/css/metismenu.min.css" rel="stylesheet" type="text/css">
+    <link href="~/css/icons.css" rel="stylesheet" type="text/css">
+    <link href="~/css/style.css" rel="stylesheet" type="text/css">
+    <link href="~/js/plugins/iziToast-master/dist/css/iziToast.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <!-- Background -->
+    <div class="account-pages"></div>
+    <!-- Begin page -->
+    <div class="wrapper-page">
+        <div class="card">
+            <div class="card-body">
+
+                <h3 class="text-center">
+                    <a href="" class="logo logo-admin"><img src="~/images/SmartLogisticLogo.png" height="60" alt="logo"></a>
+                </h3>
+
+                <div class="p-2">
+
+                    <form class="form-horizontal m-t-30" method="post" autocomplete="off" id="formLogin">
+
+                        <div class="form-group">
+                            <label class="form-label is-required">Nombre de usuario</label>
+                            <input type="text" class="form-control" asp-for="usu_UserName" placeholder="Ingrese el nombre de usuario" maxlength="20">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label is-required">Contraseña</label>
+                            <input type="password" class="form-control" asp-for="usu_Password" placeholder="Ingrese la contraseña" maxlength="50">
+                        </div>
+
+                        <div class="form-group row m-t-20">
+                            @*<div class="col-6">
+                                    <div class="custom-control custom-checkbox">
+                                        <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                        <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                    </div>
+                                </div>*@
+                            <div class="col-12 text-right">
+                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Iniciar sesión</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group m-t-10 mb-0 row">
+                            <div class="col-12 m-t-20">
+                                <label style="cursor: pointer;" onclick="ShowModalRecuperarContraseña()" class="text-muted"><i class="mdi mdi-lock"></i> ¿Olvidó su contraseña?</label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="m-t-40 text-center">
+            @*<p class="text-white-50">Don't have an account ? <a href="pages-register.html" class="text-white"> Signup Now </a> </p>*@
+            <p class="text-muted">© 2022 AHM - 5ta Generación</p>
+        </div>
+    </div>
+
+
+
+    <div id="RecuperarContraseña" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title mt-2">Recuperar contraseña</h5>
+                    <button onclick="CloseModalRecuperarContraseña()" type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-sm-12 form-group">
+                        <label class="form-label is-required">Correo vinculado a su cuenta</label>
+                        <input type="text" id="Correotxt" class="form-control" required maxlength="40" autocomplete="off" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="RecoveryPass()" class="btn btn-secondary" id="CrAreaConfirm">Enviar solicitud</button>
+                    <button type="button" onclick="CloseModalRecuperarContraseña()" class="btn btn-primary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+
+    <!-- jQuery  -->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/metisMenu.min.js"></script>
+    <script src="~/js/jquery.slimscroll.js"></script>
+    <script src="~/js/waves.min.js"></script>
+
+    <script src="~/plugins/jquery-sparkline/jquery.sparkline.min.js"></script>
+
+
+    <!-- App js -->
+    <script src="~/js/app.js"></script>
+    <script src="~/js/general-functions/notifications.js"></script>
+    <script src="~/js/plugins/iziToast-master/dist/js/iziToast.js"></script>
+    <script src="~/js/app/Login/Login.js"></script>
+    <script src="~/js/validations/formValidations.js"></script>
+    <script src="~/js/app/Login/UserInfo.js"></script>
+</body>
+
+</html>

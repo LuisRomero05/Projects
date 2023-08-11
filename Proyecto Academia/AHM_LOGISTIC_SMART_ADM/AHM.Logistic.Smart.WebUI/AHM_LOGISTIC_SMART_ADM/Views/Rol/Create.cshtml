@@ -1,0 +1,90 @@
+﻿@model AHM.Logistic.Smart.Common.Models.RolesModel
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor contextAccesor;
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Table = "Roles";
+    int? usu_Id = contextAccesor.HttpContext.Session.GetInt32("usu_Id");
+}
+
+<link href="~/lib/jstree/themes/default/style.min.css" rel="stylesheet" type="text/css" />
+<form method="post" autocomplete="off" id="frmRolCreate">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <input type="hidden" asp-for="rol_IdUserCreate" value="@usu_Id" />
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h3>Información del rol</h3>
+                            <p class="text-muted small">Ingrese un nombre único que describa el propósito del rol </p>
+                            <div class="form-group">
+                                <label class="control-label is-required" asp-for="rol_Description">Nombre del rol</label>
+                                <input class="form-control" asp-for="rol_Description" id="rol_Nombre" type="text"
+                                       maxlength="50" />
+                                <span class="text-danger" asp-validation-for="rol_Description" id="errorMessage"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-7 offset-1">
+                            <h3 class="mb-1"> Seleccione los permisos del rol</h3>
+                            <p class="text-muted small">Módulos y acciones disponibles dentro de los componentes.</p>
+                            <input type="hidden" asp-for="ModuleItemsInput" />
+                            <div id="components-tree">
+                                <ul>
+                                    @foreach (var componente in Model.ComponentesTree.OrderBy(x => x.com_Description))
+                                    {
+                                        <li data-jstree='{"icon":"la la-archive text-primary"}'>
+                                            <strong>@componente.com_Description</strong>
+                                            <ul>
+                                                @foreach (var modulo in Model.ModulosTree.OrderBy(x => x.mod_Description).Where(x
+                                  => x.com_Id == componente.com_Id))
+                                                {
+                                                    <li data-jstree='{"icon":"la la-folder text-warning"}'>
+                                                        <span class="sbold">@modulo.mod_Description</span>
+                                                        <ul>
+                                                            @foreach (var pantalla in Model.ModulosPantallasTree.OrderBy(x =>
+                                                        x.mit_Id).Where(x => x.mod_Id == modulo.mod_Id))
+                                                            {
+                                                                bool hasPermission = Model.ModuleIdList.Contains(@pantalla.mit_Id);
+                                                                <li id="item-@pantalla.mit_Id" data-id="@pantalla.mit_Id" data-jstree='{"icon":"la la-file text-info","selected":@(hasPermission ? "true" : "false")}'>@pantalla.mit_Descripction</li>
+                                                            }
+                                                        </ul>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-secondary">
+                     <span>@(Model.rol_Id > 0 ? "Aceptar" : "Aceptar")</span>
+                </button>
+                <a asp-controller="Rol" asp-action="Index" class="btn btn-primary">Cancelar</a>
+            </div>
+        </div>
+    </div>
+</form>
+@section Scripts{
+    <link href="~/lib/jstree/themes/default/style.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/lib/jstree/jstree.min.js"></script>
+    <script src="~/js/app/Rol/list-roles.js"></script>
+    <script src="~/js/app/Rol/RolCreate.js"></script>
+    <script>Roles.configureRole();</script>
+    <script>
+        function docReady(fn) {
+            if (document.readyState === "complete" || document.readyState === "interactive") {
+                setTimeout(fn, 1);
+            } else {
+                document.addEventListener("DOMContentLoaded", fn);
+            }
+        }
+        docReady(function () {
+            Menu('roles');
+
+        });
+    </script>
+}

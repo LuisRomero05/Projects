@@ -1,0 +1,166 @@
+﻿@model AHM.Logistic.Smart.Common.Models.EditarUsuario
+
+<form method="post" enctype="multipart/form-data" autocomplete="off" id="formulario">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="card">
+        <div class="card-header">
+            @if (Model.usu_Id == 0)
+            {
+                <h4>Agregar usuario</h4>
+            }
+            else
+            {
+                <h4>Editar usuario</h4>
+                <input type="hidden" asp-for="usu_IdUserCreate" />
+            }
+        </div>
+        <div class="card-body">
+            <input type="hidden" asp-for="usu_Id" value="@ViewBag.usu_Id" />
+            <div class="portlet-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label class="control-label is-required">Nombre de usuario</label>
+                            <input class="form-control" id="inputusua" asp-for="usu_UserName" type="text" maxlength="20" autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label is-required">Empleados</label>
+                            @if (Model.usu_Id > 0)
+                            {
+                                <input type="hidden" asp-for="Per_Id" />
+                            }
+                            @if (Model.usu_Id > 0)
+                            {
+                                <div id="divPersons">
+                                    <select asp-for="Per_Id" id="DropDownPersonas" class="form-control" maxlength="1" disabled>
+                                        <option value="0" disabled> Por favor seleccione una opción... </option>
+                                        @foreach (var item in Model.employeesModel)
+                                        {
+                                            <option value="@Html.ValueFor(x => item.per_Id)">@Html.DisplayFor(x => item.per_Firstname)</option>
+                                        }
+
+                                    </select>
+                                </div>
+                            }
+                            else
+                            {
+                                <div id="divPersons">
+                                    <select asp-for="Per_Id" id="DropDownPersonas" class="form-control" maxlength="1">
+                                        <option value="0"> Por favor seleccione una opción... </option>
+                                        @foreach (var item in Model.employeesModel)
+                                        {
+                                            <option value="@Html.ValueFor(x => item.per_Id)">@Html.DisplayFor(x => item.per_Firstname)</option>
+                                        }
+                                    </select>
+                                </div>
+                            }
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label is-required">Roles</label>
+                            @if (Model.usu_Id > 0)
+                            {
+                                <input type="hidden" id="rolId" value="@ViewBag.rol_Id" />
+                            }
+                            @if (ViewBag.isEditUnique == true)
+                            {
+                                <input type="hidden" asp-for="isEditUnique" />
+                                <div id="divRoles">
+                                    <select asp-for="rol_Id" id="DropDownRoles" class="form-control" maxlength="1" disabled>
+                                        @if (Model.usu_Id > 0)
+                                        {
+                                            <option value="0" disabled> Por favor seleccione una opción... </option>
+                                        }
+                                    </select>
+                                </div>
+                            }
+                            else
+                            {
+                                <input type="hidden" asp-for="isEditUnique" value="@ViewBag.isEditUnique" />
+                                <div id="divRoles">
+                                    <select asp-for="rol_Id" id="DropDownRoles" class="form-control" maxlength="1">
+                                        @if (Model.usu_Id > 0)
+                                        {
+                                            <option value="0" disabled> Por favor seleccione una opción... </option>
+                                        }
+                                    </select>
+                                </div>
+                            }
+                            @if (Model.usu_Id == 0)
+                            {
+                                <br />
+                                <div class="form-group">
+                                    <label class="form-label is-required">Contraseña</label>
+                                    <input class="form-control" type="password" maxlength="50" asp-for="usu_Password" autocomplete="new-password" />
+                                    <span class="text-danger" id="errorMessage" asp-validation-for="usu_Password"></span>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="control-label">Imagen de perfil</label>
+                        <br />
+                        <div class="custom-file">
+                            <label id="lblImageFile" class="custom-file-label" accept="imagen/png, imagen/jpeg, imagen/gif">Seleccione imagen</label>
+                            <input asp-for="ImageFile" type="file" class="custom-file-input" onchange="previewFile()" id="file" />
+                        </div>
+                        <label class="control-label"></label>
+                        <br />
+                        <img src="/User/ShowImage/?routeImage=@Model.usu_Profile_picture" class="img-fluid rounded-circle" style="border: 1px solid; border-radius: 50%; height: 220px; width: 220px" alt="Image preview..." id="img">
+                        <input type="hidden" asp-for="usu_Profile_picture" />
+                    </div>
+                </div>
+                <div class="row">
+                    <br />
+                    <br />
+                    <div class="col-md-12">
+                        <button class="btn btn-secondary" id="idboton"><span>@(Model.usu_Id > 0 ? "Aceptar" : " Aceptar")</span></button>
+                        <a class="btn btn-primary" href="/user/index/">Cancelar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<script type="text/javascript">
+    //extensiones de las imagenes
+    var extensionesPermitidas = /(.png|.jpg|.jpge|.PNG|.JPG|.JPGE)$/i;
+
+    function previewFile() {
+        //se pasa el 'img' a una variable
+        var preview = document.getElementById('img');
+        //se para el archivo seleccionado a una variable
+        var file = document.getElementById('file').files[0];
+        //se obtiene la direccion de la imagen
+        var archivoRuta = document.getElementById('file').value;
+        //validacion de la extension de la imagen
+
+        if (!extensionesPermitidas.exec(archivoRuta)) {
+            iziToast.error({
+                message: '¡Se produjo un error, extensión no permitida!',
+                displayMode: 'replace'
+            });
+
+            document.getElementById('file').value = '';
+            return false;
+        }
+        else {
+            //El FileReader permite leer los ficheros almacenados en el cliente
+            var reader = new FileReader();
+
+            //onloadend: es un EventHandler que representa el código cuando el progreso se ha detenido en la carga de un recurso.
+            reader.onloadend = function () {
+                //se accede al src del <img> y se agrega la direccion
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                //es usado para leer el contenido del especificado File
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+        }
+    }
+</script>
