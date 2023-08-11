@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AHM.Logistic.Smart.Api", "AHM.Logistic.Smart.Api\AHM.Logistic.Smart.Api.csproj", "{93FD5C8A-6D55-4669-8CC3-DF38B92546D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AHM.Logistic.Smart.Entities", "AHM.Logistic.Smart.Entities\AHM.Logistic.Smart.Entities.csproj", "{8C5535FC-0879-4D50-84AE-01E9DB584DC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AHM.Logistic.Smart.DataAccess", "AHM.Logistic.Smart.DataAccess\AHM.Logistic.Smart.DataAccess.csproj", "{80725EF1-15FE-4121-8DBB-57DDCD9DC189}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AHM.Logistic.Smart.BusinessLogic", "AHM.Logistic.Smart.BusinessLogic\AHM.Logistic.Smart.BusinessLogic.csproj", "{DD76507A-161F-442D-9462-3FF38DE223C3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AHM.Logistic.Smart.Common", "AHM.Logistic.Smart.Common\AHM.Logistic.Smart.Common.csproj", "{BFC4882C-E457-46B9-9EE9-E381DC8CAEFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AHM.Logistic.Smart.Unit.Test", "AHM.Logistic.Smart.Unit.Test\AHM.Logistic.Smart.Unit.Test.csproj", "{55DF6E40-A817-4D60-8A44-9F5C2AA17854}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93FD5C8A-6D55-4669-8CC3-DF38B92546D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93FD5C8A-6D55-4669-8CC3-DF38B92546D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93FD5C8A-6D55-4669-8CC3-DF38B92546D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93FD5C8A-6D55-4669-8CC3-DF38B92546D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C5535FC-0879-4D50-84AE-01E9DB584DC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C5535FC-0879-4D50-84AE-01E9DB584DC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C5535FC-0879-4D50-84AE-01E9DB584DC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C5535FC-0879-4D50-84AE-01E9DB584DC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80725EF1-15FE-4121-8DBB-57DDCD9DC189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80725EF1-15FE-4121-8DBB-57DDCD9DC189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80725EF1-15FE-4121-8DBB-57DDCD9DC189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80725EF1-15FE-4121-8DBB-57DDCD9DC189}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD76507A-161F-442D-9462-3FF38DE223C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD76507A-161F-442D-9462-3FF38DE223C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD76507A-161F-442D-9462-3FF38DE223C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD76507A-161F-442D-9462-3FF38DE223C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC4882C-E457-46B9-9EE9-E381DC8CAEFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC4882C-E457-46B9-9EE9-E381DC8CAEFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC4882C-E457-46B9-9EE9-E381DC8CAEFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC4882C-E457-46B9-9EE9-E381DC8CAEFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55DF6E40-A817-4D60-8A44-9F5C2AA17854}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55DF6E40-A817-4D60-8A44-9F5C2AA17854}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55DF6E40-A817-4D60-8A44-9F5C2AA17854}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55DF6E40-A817-4D60-8A44-9F5C2AA17854}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95F81E55-F8D9-468E-AD3B-6B0BCCCC3314}
+	EndGlobalSection
+EndGlobal

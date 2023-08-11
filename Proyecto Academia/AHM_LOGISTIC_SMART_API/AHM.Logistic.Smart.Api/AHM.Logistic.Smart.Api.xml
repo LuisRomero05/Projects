@@ -1,0 +1,2450 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AHM.Logistic.Smart.Api</name>
+    </assembly>
+    <members>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.AreasController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Areas".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Areas" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.AreasController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Areas" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Areas" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.AreasController.Insert(AHM.Logistic.Smart.Common.Models.AreasModel)">
+            <summary>
+            End point para registrar una Area nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Area.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.AreasController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.AreasModel)">
+            <summary>
+            End point para actualizar un Area existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.AreasController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un Area existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CallBusinessController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "ListCallBusiness".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "ListCallBusiness" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CallResultController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "ListCallResult".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "ListCallResult" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CallTypeController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "ListCallType".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "ListCallType" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CampaignController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Campaign".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Campaign" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CampaignController.ListCampaignDetails">
+            <summary>
+            End point para visualizar los registros de la tabla "CampaignDetail;s".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CampaignDetails" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CampaignController.DetailsCampaigns(System.Int32)">
+            <summary>
+            End point para visualizar los registros de la tabla "CampaignFilter".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CampaignFilter" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CampaignController.Details(System.Int32)">
+            <summary>
+            End point para visualizar los registros de la tabla "CampaignDetails".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CampaignDetails" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CampaignController.Insert(AHM.Logistic.Smart.Common.Models.CampaignModel)">
+            <summary>
+            End point para registrar una Campaign nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Campaign.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CampaignController.Insert(AHM.Logistic.Smart.Common.Models.CampaignDetailsModel)">
+            <summary>
+            End point para madnar una Campaign nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Campaign.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CampaignController.Delete(System.Int32)">
+            <summary>
+            End point para eliminar un Area existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CategoriesController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Categories".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Categories" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CategoriesController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Categories" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Categories" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CategoriesController.Insert(AHM.Logistic.Smart.Common.Models.CategoryModel)">
+            <summary>
+            End point para registrar una categoria nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la categoria.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CategoriesController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.CategoryModel)">
+            <summary>
+            End point para actualizar una categoria existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CategoriesController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una categoria existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.ContactsController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Contacts".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Contacts" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.ContactsController.Details(System.Int32)">
+            <summary>
+            End point para visualizar los registros de la tabla "Contacts".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Contacts" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.ContactsController.Insert(AHM.Logistic.Smart.Common.Models.ContactsModel)">
+            <summary>
+            End point para registrar un contacto nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al contacto.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.ContactsController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.ContactsModel)">
+            <summary>
+            End point para actualizar un contacto existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.ContactsController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un contacto existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CotizationsController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Cotizations".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Cotizations" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CotizationsController.CotizationsDetails(System.Int32)">
+            <summary>
+            End point para visualizar un registro de la tabla "Cotizations".
+            </summary>
+            <remarks>
+            Se mostrara un registro de la tabla "Cotizations" requiriendo el id del encabezado de dicha cotizacion.        
+            </remarks>
+            <param name="Id">Id es el identificador del encabezado de la cotizacion.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CotizationsController.Insert(AHM.Logistic.Smart.Common.Models.CotizationsModel)">
+            <summary>
+            End point para crear una cotizacion.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la cotizacion.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CotizationsController.InsertDetails(System.Collections.Generic.List{AHM.Logistic.Smart.Common.Models.CotizationsDetailUpdateModel})">
+            <summary>
+            End point para crear una cotizacion.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la cotizacion.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CotizationsController.Update(AHM.Logistic.Smart.Common.Models.CotizationsModel)">
+            <summary>
+            End point para actualizar una cotizacion.
+            </summary>
+            <remarks>
+            Actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CotizationsController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una Cotizacion existente.
+            </summary>
+            <remarks>
+            Colocar los campos solicitados para proceder a su eliminacion.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CotizationsController.DeleteDetail(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una Cotizacion existente.
+            </summary>
+            <remarks>
+            Colocar los campos solicitados para proceder a su eliminacion.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CountryController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Country".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Country" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CountryController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Country" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Country" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CountryController.Insert(AHM.Logistic.Smart.Common.Models.CountryModel)">
+            <summary>
+            End point para registrar un Pais nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Area.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CountryController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.CountryModel)">
+            <summary>
+            End point para actualizar un Pais existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CountryController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un Pais existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerCallsController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "CustomerCalls".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CustomerCalls" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerCallsController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "CustomerCalls" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "CustomerCalls" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerCallsController.Insert(AHM.Logistic.Smart.Common.Models.CustomerCallsModel)">
+            <summary>
+            End point para registrar un Customer Call nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Customer Call.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerCallsController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.CustomerCallsModel)">
+            <summary>
+            End point para actualizar una Customer Call existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerCallsController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una CustomerCall existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerFilesController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "CustomersFile".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CustomersFile" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerFilesController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "CustomersFile" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "CustomersFile" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerFilesController.Insert(AHM.Logistic.Smart.Common.Models.CustomersFileViewModel)">
+            <summary>
+            End point para registrar un Customer Notes nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Customer Notes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerFilesController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una CustomersFile existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerNotesController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "CustomerNotes".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CustomerNotes" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerNotesController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "CustomerNotes" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "CustomerNotes" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerNotesController.Insert(AHM.Logistic.Smart.Common.Models.CustomerNotesModel)">
+            <summary>
+            End point para registrar un Customer Notes nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Customer Notes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerNotesController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.CustomerNotesModel)">
+            <summary>
+            End point para actualizar una Customer Notes existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomerNotesController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una CustomerNotes existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomersController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Customers".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Customers" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomersController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Customers" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Customers" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomersController.Insert(AHM.Logistic.Smart.Common.Models.CustomersModel)">
+            <summary>
+            End point para registrar una cliente nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al cliente.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomersController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.CustomersModel)">
+            <summary>
+            End point para actualizar un cliente existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.CustomersController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un cliente existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.DashboardController.DashBoardMetrics(System.Int32)">
+            <summary>
+            End point para desplegar las metricas de los card del dashboard
+            </summary>
+            <remarks>
+            Colocar el Id del usuario para traer su data correspondiente.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentran los registros.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.DashboardController.TopProducts">
+            <summary>
+            End point para desplegar los mejores 10 productos
+            </summary>
+            <remarks>
+            Colocar el Id del usuario para traer su data correspondiente.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentran los registros.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.DashboardController.TopCustomers">
+            <summary>
+            End point para desplegar los 3 clientes con mas ordenes de venta
+            </summary>
+            <remarks>
+            Mandar a llamar para recolectar la informacion
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentran los registros.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.DashboardController.LastCotizations(System.Int32)">
+            <summary>
+            End point para desplegar las ultimas 5 cotizaciones en el dashboard
+            </summary>
+            <remarks>
+            Colocar el Id del usuario para traer su data correspondiente.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentran los registros.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.DashboardController.LastSales(System.Int32)">
+            <summary>
+            End point para desplegar las ultimas 5 ventas en el dashboard
+            </summary>
+            <remarks>
+            Colocar el Id del usuario para traer su data correspondiente.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentran los registros.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.DepartmentsController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Departments".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Departments" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.DepartmentsController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Departments" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Departments" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.DepartmentsController.Insert(AHM.Logistic.Smart.Common.Models.DepartmentsModel)">
+            <summary>
+            End point para registrar un departamento nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al Departamento.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.DepartmentsController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.DepartmentsModel)">
+            <summary>
+            End point para actualizar un departamento existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.DepartmentsController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un departamento existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.EmployeesController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Employees".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Employees" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.EmployeesController.Details(System.Int32)">
+            <summary>
+            End point para visualizar los registros de la tabla "Employees".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Employees" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.EmployeesController.Insert(AHM.Logistic.Smart.Common.Models.EmployeesModel)">
+            <summary>
+            End point para registrar una empleado nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al empleado.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.EmployeesController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.EmployeesModel)">
+            <summary>
+            End point para actualizar un empleado existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.EmployeesController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un empleado existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.LoginController.Login(AHM.Logistic.Smart.Common.Models.LoginModel)">
+            <summary>
+            End point para logearse.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes para logearse.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MeetingsController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Meetings".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Cotizations" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MeetingsController.ListMeetingsDetails">
+            <summary>
+            End point para visualizar los registros de la tabla "Meetings".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Cotizations" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MeetingsController.ListCusEmp">
+            <summary>
+            End point para visualizar los registros de la tabla "Customers y Employees".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Customers y Employees" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MeetingsController.MeetingsDetails(System.Int32)">
+            <summary>
+            End point para visualizar un registro de la tabla "Cotizations".
+            </summary>
+            <remarks>
+            Se mostrara un registro de la tabla "Cotizations" requiriendo el id del encabezado de dicha cotizacion.        
+            </remarks>
+            <param name="Id">Id es el identificador del encabezado de la cotizacion.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MeetingsController.Insert(AHM.Logistic.Smart.Common.Models.MeetingsModel)">
+            <summary>
+            End point para crear una cotizacion.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la cotizacion.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MeetingsController.InsertDetails(AHM.Logistic.Smart.Common.Models.MeetingsDetailUpdateModel)">
+            <summary>
+            End point para crear una cotizacion.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la cotizacion.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MeetingsController.Update(AHM.Logistic.Smart.Common.Models.MeetingsModel,System.Int32)">
+            <summary>
+            End point para actualizar una cotizacion.
+            </summary>
+            <remarks>
+            Actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            /// <param name="Id">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MeetingsController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una Cotizacion existente.
+            </summary>
+            <remarks>
+            Colocar los campos solicitados para proceder a su eliminacion.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MeetingsController.DeleteDetail(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una Cotizacion existente.
+            </summary>
+            <remarks>
+            Colocar los campos solicitados para proceder a su eliminacion.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MunicipalitiesController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Municipalities".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Municipalities" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MunicipalitiesController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Municipalities" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Municipalities" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MunicipalitiesController.Insert(AHM.Logistic.Smart.Common.Models.MunicipalitiesModel)">
+            <summary>
+            End point para registrar un Municipio nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al Municipio.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MunicipalitiesController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.MunicipalitiesModel)">
+            <summary>
+            End point para actualizar un Municipio existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.MunicipalitiesController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un Municipio existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OccupationsController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Occupations".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Occupations" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OccupationsController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Occupations" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Occupations" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OccupationsController.Insert(AHM.Logistic.Smart.Common.Models.OccupationsModel)">
+            <summary>
+            End point para registrar una Ocupacion nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a ;a Ocupacion.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OccupationsController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.OccupationsModel)">
+            <summary>
+            End point para actualizar una Ocupacion existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OccupationsController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una Ocupacion existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OrdersController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "SaleOrders".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "SaleOrders" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OrdersController.SaleOrdersDetails(System.Int32)">
+            <summary>
+            End point para visualizar un registro de la tabla "SaleOrders y OrderDetails".
+            </summary>
+            <remarks>
+            Se mostrara un registro de la tabla "SaleOrders y sus detalles" requiriendo el id del encabezado de dicha orden.        
+            </remarks>
+            <param name="Id">Id es el identificador del encabezado de la orden.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OrdersController.Insert(AHM.Logistic.Smart.Common.Models.SaleOrdersModel)">
+            <summary>
+            End point para crear una orden de venta
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la orden de venta.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OrdersController.InsertDetails(System.Collections.Generic.List{AHM.Logistic.Smart.Common.Models.OrderDetailsUpdateModel})">
+            <summary>
+            End point para crear una Orden de Ventas.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la cotizacion.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OrdersController.Update(AHM.Logistic.Smart.Common.Models.SaleOrdersModel)">
+            <summary>
+            End point para actualizar una orden de venta
+            </summary>
+            <remarks>
+            Actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OrdersController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una orden de venta existente.
+            </summary>
+            <remarks>
+            Colocar los campos solicitados para proceder a su eliminacion.
+            </remarks>
+            <param name="Id">Id es el id del registro que sera eliminado.</param>
+            <param name="Mod">Mod es el id del usuario que esta modificando el registro.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.OrdersController.DeleteDetail(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una Cotizacion existente.
+            </summary>
+            <remarks>
+            Colocar los campos solicitados para proceder a su eliminacion.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.PersonsController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Persons".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Persons" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.PersonsController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Persons" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Persons" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.PersonsController.Insert(AHM.Logistic.Smart.Common.Models.PersonsModel)">
+            <summary>
+            End point para registrar una persona nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la persona.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.PersonsController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.PersonsModel)">
+            <summary>
+            End point para actualizar una persona existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.PersonsController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una persona existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.PrioritiesController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Priorities".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Priorities" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.ProductsController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Products".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Products" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.ProductsController.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Products" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Products" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.ProductsController.Insert(AHM.Logistic.Smart.Common.Models.ProductsModel)">
+            <summary>
+            End point para registrar un producto nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al producto.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.ProductsController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.ProductsModel)">
+            <summary>
+            End point para actualizar un producto existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.ProductsController.StockUpdate(System.Int32,AHM.Logistic.Smart.Common.Models.ProductStockModel)">
+            <summary>
+            End point para actualizar el stock de un producto existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.ProductsController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un roles existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.RolesController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Roles".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Roles" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.RolesController.ComponentsList">
+            <summary>
+            End point para visualizar los registros de la tabla "Roles".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Roles" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.RolesController.ModulesList">
+            <summary>
+            End point para visualizar los registros de la tabla "Components".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Components" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.RolesController.ModuleItemsList">
+            <summary>
+            End point para visualizar los registros de la tabla "Modules".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Modules" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.RolesController.Details(System.Int32)">
+            <summary>
+            End point para visualizar los registros de la tabla "ModuleItems".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "ModuleItems" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.RolesController.GetModuleItems(System.Int32)">
+            <summary>
+            End point para visualizar los items de los modulos por su rol de la tabla tbRoleModuleItems.
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "tbRoleModuleItems" requieriendo el dato del rol para traer cada item por medio del rol ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.RolesController.Insert(AHM.Logistic.Smart.Common.Models.RolModel)">
+            <summary>
+            End point para registrar un rol nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al rol.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.RolesController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.RolModel)">
+            <summary>
+            End point para actualizar un rol existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.RolesController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un roles existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.SecurityController.ListScreens">
+            <summary>
+            End point para visualizar los registros de la tabla "Screens".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Screens" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.SecurityController.GetPermissions(System.String)">
+            <summary>
+            End point para visualizar el registro de la tabla "ScreensPerRole" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "ScreensPerRole" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.SecurityController.SendContraseña(System.String)">
+            <summary>
+            End point para visualizar el registro de la tabla "ScreensPerRole" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "ScreensPerRole" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.SubCategoriesController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "SubCategories".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "SubCategories" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.SubCategoriesController.Details(System.Int32)">
+            <summary>
+            End point para visualizar los registros de la tabla "SubCategories".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "SubCategories" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.SubCategoriesController.Insert(AHM.Logistic.Smart.Common.Models.SubCategoriesModel)">
+            <summary>
+            End point para registrar una sub-categoria nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al sub-categories.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.SubCategoriesController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.SubCategoriesModel)">
+            <summary>
+            End point para actualizar una sub-categoria existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.SubCategoriesController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un sub-categoria existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.UnitsController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Units".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Units" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.UsersController.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Users".
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al usuario.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.UsersController.Find(System.String)">
+            <summary>
+            End point para visualizar los registros de la tabla "Users".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Users" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.UsersController.FindByUser(System.String)">
+            <summary>
+            End point para visualizar los registros de la tabla "Users".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Users" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.UsersController.Details(System.Int32)">
+            <summary>
+            End point para visualizar los registros de la tabla "Users".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Users" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.UsersController.Insert(AHM.Logistic.Smart.Common.Models.UsersModel)">
+            <summary>
+            End point para registrar un usuario nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al usuario.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.UsersController.Update(System.Int32,AHM.Logistic.Smart.Common.Models.UsersModel)">
+            <summary>
+            End point para actualizar un usuario existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.Controllers.UsersController.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un usuario existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.AreasControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Areas".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Areas" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.AreasControllerTest.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Areas" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Areas" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.AreasControllerTest.Insert(AHM.Logistic.Smart.Common.Models.AreasModel)">
+            <summary>
+            End point para registrar una Area nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Area.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.AreasControllerTest.Update(System.Int32,AHM.Logistic.Smart.Common.Models.AreasModel)">
+            <summary>
+            End point para actualizar un Area existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.AreasControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un Area existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CallBusinessControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "CallBusiness".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CallBusiness" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CallResultControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "CallResult".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CallResult" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CallTypeControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "CallType".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CallType" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CampaignControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Campaign".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Campaign" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CampaignControllerTest.ListCampaignDetails">
+            <summary>
+            End point para visualizar los registros de la tabla "CampaignDetail;s".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CampaignDetails" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CampaignControllerTest.DetailsCampaigns(System.Int32)">
+            <summary>
+            End point para visualizar los registros de la tabla "CampaignFilter".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CampaignFilter" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CampaignControllerTest.Details(System.Int32)">
+            <summary>
+            End point para visualizar los registros de la tabla "CampaignDetails".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CampaignDetails" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CampaignControllerTest.Insert(AHM.Logistic.Smart.Common.Models.CampaignModel)">
+            <summary>
+            End point para registrar una Campaign nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Campaign.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CampaignControllerTest.Insert(AHM.Logistic.Smart.Common.Models.CampaignDetailsModel)">
+            <summary>
+            End point para madnar una Campaign nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Campaign.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CampaignControllerTest.Delete(System.Int32)">
+            <summary>
+            End point para eliminar un Area existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CountriesControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "countries".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "countries" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CountriesControllerTest.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "countries" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "countries" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CountriesControllerTest.Insert(AHM.Logistic.Smart.Common.Models.CountryModel)">
+            <summary>
+            End point para registrar una País nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a el País.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CountriesControllerTest.Update(System.Int32,AHM.Logistic.Smart.Common.Models.CountryModel)">
+            <summary>
+            End point para actualizar un País existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CountriesControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un País existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CustomerCallsControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "CustomerCalls".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "CustomerCalls" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CustomerCallsControllerTest.Insert(AHM.Logistic.Smart.Common.Models.CustomerCallsModel)">
+            <summary>
+            End point para registrar un Customer Call nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Customer Call.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CustomerCallsControllerTest.Update(AHM.Logistic.Smart.Common.Models.CustomerCallsModel,System.Int32)">
+            <summary>
+            End point para actualizar una Customer Call existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CustomerCallsControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una CustomerCall existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CustomerControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Clientes".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Areas" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CustomerControllerTest.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Clientes" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Areas" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CustomerControllerTest.Insert(AHM.Logistic.Smart.Common.Models.CustomersModel)">
+            <summary>
+            End point para registrar una Clientes nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Area.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CustomerControllerTest.Update(System.Int32,AHM.Logistic.Smart.Common.Models.CustomersModel)">
+            <summary>
+            End point para actualizar un Clientes existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.CustomerControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un Clientes existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.DepartmentsControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Departments".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Departments" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.DepartmentsControllerTest.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Departments" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Departments" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.DepartmentsControllerTest.Insert(AHM.Logistic.Smart.Common.Models.DepartmentsModel)">
+            <summary>
+            End point para registrar un departamento nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al Departamento.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.DepartmentsControllerTest.Update(System.Int32,AHM.Logistic.Smart.Common.Models.DepartmentsModel)">
+            <summary>
+            End point para actualizar un departamento existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.DepartmentsControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un departamento existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.EmployeesControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Empleados".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Empleados" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.EmployeesControllerTest.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Empleados" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Empleados" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.EmployeesControllerTest.Insert(AHM.Logistic.Smart.Common.Models.EmployeesModel)">
+            <summary>
+            End point para registrar un Empleados nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar el Empleado.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.EmployeesControllerTest.Update(System.Int32,AHM.Logistic.Smart.Common.Models.EmployeesModel)">
+            <summary>
+            End point para actualizar un Empleado existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.EmployeesControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un Empleado existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.MunicipalitiesControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Municipalities".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Municipalities" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.MunicipalitiesControllerTest.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Municipalities" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Municipalities" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.MunicipalitiesControllerTest.Insert(AHM.Logistic.Smart.Common.Models.MunicipalitiesModel)">
+            <summary>
+            End point para registrar un Municipio nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al Municipio.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.MunicipalitiesControllerTest.Update(System.Int32,AHM.Logistic.Smart.Common.Models.MunicipalitiesModel)">
+            <summary>
+            End point para actualizar un Municipio existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.MunicipalitiesControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un Municipio existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.OccupationControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Puestos".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Puestos" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.OccupationControllerTest.Insert(AHM.Logistic.Smart.Common.Models.OccupationsModel)">
+            <summary>
+            End point para registrar una Ocupacion nueva.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la Ocupacion.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.OccupationControllerTest.Update(System.Int32,AHM.Logistic.Smart.Common.Models.OccupationsModel)">
+            <summary>
+            End point para actualizar un Puesto existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.OccupationControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un Puesto existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.PersonsControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Persons".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Persons" sin requerir de ningun dato a ingresar.        
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.PersonsControllerTest.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Persons" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Persons" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.PersonsControllerTest.Insert(AHM.Logistic.Smart.Common.Models.PersonsModel)">
+            <summary>
+            End point para registrar una persona nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar a la persona.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.PersonsControllerTest.Update(System.Int32,AHM.Logistic.Smart.Common.Models.PersonsModel)">
+            <summary>
+            End point para actualizar una persona existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.PersonsControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar una persona existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.ProductsControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Products".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Products" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.ProductsControllerTest.Details(System.Int32)">
+            <summary>
+            End point para visualizar el registro de la tabla "Products" segun el Id ingresado.
+            </summary>
+            <remarks>
+            Se mostrara el registro de la tabla "Products" segun el Id ingresado.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.ProductsControllerTest.Insert(AHM.Logistic.Smart.Common.Models.ProductsModel)">
+            <summary>
+            End point para registrar un producto nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al producto.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.ProductsControllerTest.Update(System.Int32,AHM.Logistic.Smart.Common.Models.ProductsModel)">
+            <summary>
+            End point para actualizar un producto existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.ProductsControllerTest.StockUpdate(System.Int32,AHM.Logistic.Smart.Common.Models.ProductStockModel)">
+            <summary>
+            End point para actualizar el stock de un producto existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.ProductsControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un roles existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.RolesControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Roles".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Roles" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.RolesControllerTest.Details(System.Int32)">
+            <summary>
+            End point para visualizar los registros de la tabla "ModuleItems".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "ModuleItems" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.RolesControllerTest.Insert(AHM.Logistic.Smart.Common.Models.RolModel)">
+            <summary>
+            End point para registrar un rol nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al rol.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.RolesControllerTest.Update(System.Int32,AHM.Logistic.Smart.Common.Models.RolModel)">
+            <summary>
+            End point para actualizar un rol existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.RolesControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un roles existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.UserControllerTest.List">
+            <summary>
+            End point para visualizar los registros de la tabla "Users".
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al usuario.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.UserControllerTest.Find(System.String)">
+            <summary>
+            End point para visualizar los registros de la tabla "Users".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Users" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.UserControllerTest.FindByUser(System.String)">
+            <summary>
+            End point para visualizar los registros de la tabla "Users".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Users" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.UserControllerTest.Details(System.Int32)">
+            <summary>
+            End point para visualizar los registros de la tabla "Users".
+            </summary>
+            <remarks>
+            Se mostraran todos los registros de la tabla "Users" sin requerir de ningun dato a ingresar.
+            </remarks>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.UserControllerTest.Insert(AHM.Logistic.Smart.Common.Models.UsersModel)">
+            <summary>
+            End point para registrar un usuario nuevo.
+            </summary>
+            <remarks>
+            Se deben ingresar los datos correspondientes con el tipo solicitado. Colocar Id's existentes y que correspondan a lo que se le quiere asignar al usuario.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.UserControllerTest.Update(System.Int32,AHM.Logistic.Smart.Common.Models.UsersModel)">
+            <summary>
+            End point para actualizar un usuario existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a actualizar y llenar los campos correspondientes.
+            </remarks>
+            <param name="items">Items es la entidad que contiene los datos que se solicitan.</param>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a actualizar.</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+        <member name="M:AHM.Logistic.Smart.Api.TestControllers.UserControllerTest.Delete(System.Int32,System.Int32)">
+            <summary>
+            End point para eliminar un usuario existente.
+            </summary>
+            <remarks>
+            Colocar el Id del registro a eliminar y el Id del Usuario que modifico el registro.
+            </remarks>
+            <param name="Id">Id es el parametro mediante el cual se encuentra el registro a eliminar.</param>
+            <param name="Mod">Mod es el Id del Usuario que modifica el registro</param>
+            <response code="200">Success. Los valores son correctos y se han agregado exitosamente.</response>
+            <response code="401">Unauthorized. No se ha indicado o es incorrecto el Token JTW de acceso.</response>
+            <response code="400">Bad Request. La informacion ingresada no es la correcta o el proceso no existe.</response>
+        </member>
+    </members>
+</doc>

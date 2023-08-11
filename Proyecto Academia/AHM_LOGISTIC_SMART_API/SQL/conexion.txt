@@ -1,0 +1,2 @@
+"DefaultConnection": "data source=tcp:s11.everleap.com; initial catalog=DB_7771_logisticsmar; user id=DB_7771_logisticsmar_user; password=Temporal123#"
+
