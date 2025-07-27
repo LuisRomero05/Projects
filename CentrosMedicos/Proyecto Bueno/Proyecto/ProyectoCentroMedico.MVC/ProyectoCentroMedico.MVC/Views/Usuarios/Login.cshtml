@@ -1,0 +1,44 @@
+﻿@model UsuariosViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>Login</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+        <link href="~/css/Login-Styles.css" rel="stylesheet" />
+        <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+        <link href="/pyramid-solid-24.png" rel="icon" type="image/x-icon" />
+    </head>
+    <body>
+        <div class="container" id="container">
+            <div class="form-container sign-in-container">
+                <form class="form-horizontal" asp-action="Login" asp-controller="Usuarios" autocomplete="off" method="post">
+                    <h1 class="Login">Iniciar Sesión_</h1>
+                    <br>
+                    <div asp-validation-summary="ModelOnly" class="TextoAlerta"></div>
+                    <input type="text" asp-for="usu_Email" class="form-control" maxlength="150" placeholder="Usuario" />
+                    <input type="password" asp-for="usu_Password" class="form-control" maxlength="150" placeholder="Contraseña" />
+                    <br> <br>
+                    <button type="submit">Acceder</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-right">
+                        <div class="Logo_icon">
+                            <i class='bx bx-command'></i>
+                        </div>
+                        <h1 class="Super">Hospital La Vida</h1>
+                        @*<h2>HospitalBit</h2>*@
+                        <p>La vida es un tesoro</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

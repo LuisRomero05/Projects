@@ -1,0 +1,57 @@
+﻿
+@model HospitalesViewModel
+@{
+    ViewData["Title"] = "Hospital";
+}
+
+
+<br />  <p><br /></p>
+<div class="container col-lg-10">
+
+    <div class="card col-md-10">
+        <div class="col-5 col-md-10">
+        <div class="card-header">
+            <br />
+
+            <h4>Insertar Hospital</h4>
+            <br />
+
+        </div>
+        <div class="card-body">
+            <form autocomplete="off" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+
+                <div class="form-group">
+                    <label asp-for="hospi_Nombre" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input type="text" asp-for="hospi_Nombre" class="form-control" maxlength="150" />
+                        <span asp-validation-for="hospi_Nombre" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="hospi_Telefono" class="control-label col-md-2"></label>
+                    <div class="col-md-10">
+                        <input type="text" asp-for="hospi_Telefono" class="form-control" maxlength="150" />
+                        <span asp-validation-for="hospi_Telefono" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <br />
+                        <input type="submit" value="Guardar" class="btn btn-sm btn-outline-info" />
+                        <a class="btn btn-sm btn-primary" asp-area="" asp-controller="Hospital" asp-action="PrintUltId" target="_blank">Ultimo Reporte</a>
+                        <a class="btn btn-sm btn-primary" asp-area="" asp-controller="Hospital" asp-action="Print" target="_blank">Mostrar Reporte</a>
+                        <br />
+                    </div>
+                </div>
+            </form>
+
+        </div>
+
+        </div>
+    </div>
+</div>

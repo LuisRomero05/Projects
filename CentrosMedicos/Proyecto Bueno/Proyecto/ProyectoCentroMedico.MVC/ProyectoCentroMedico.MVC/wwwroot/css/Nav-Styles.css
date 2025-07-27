@@ -1,0 +1,202 @@
+/* Recordatorio de Fer: La fuente es Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+ 
+}
+
+body{
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar{
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 6px #1a1922c0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background: #1a1922;
+    padding: 14px 14px;
+    transition: all 0.5s ease;
+
+}
+
+
+
+.sidebar.active{
+    width: 240px
+}
+
+.sidebar.active .logo_content .logo {
+    opacity: 1;
+}
+
+.sidebar .logo_content .logo {
+    color: white;
+    display: flex;
+    height: 210px;
+    width: 100%;
+    font-size: 0px;
+    align-items: center;
+    opacity: 0;
+    font-size: 0px;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+
+
+.logo_content .logo i{
+    font-size: 48px;
+}
+
+.logo_content .logo .logo_name{
+    font-size: 20px;
+    font-weight: 400;
+    
+}
+
+
+
+.sidebar #btn{
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 20px;
+    font-size: 30px;
+    height: 60px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+}
+
+.sidebar.active #btn{
+    left: 80%;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+
+}
+
+
+.sidebar ul{
+    margin-top: 20px;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin: 5 5px;
+    list-style: none;
+    line-height: 50px;
+}
+
+.sidebar ul li a{
+    color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover{
+    color: #1a1922;
+    background: white;
+
+}
+
+.sidebar ul li a i{
+    height: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.sidebar .links_name{
+    opacity: 0;
+    font-size: 0px;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .links_name{
+    opacity: 1;
+    font-size: 15px;
+    pointer-events: auto;
+}
+
+
+.sidebar .profile_content{
+    position: absolute;
+    color: white;
+    bottom: 0;
+    left: 0;
+}
+   
+.sidebar .profile_content .profile{
+    position: relative;
+    padding: 10px 6px;
+    height: 60px;
+}   
+
+.profile_content .profile .profile_details{
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    font-size: 0px;
+    pointer-events: auto;
+    white-space: nowrap;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .profile .profile_details{
+    opacity: 1;
+    pointer-events: auto;
+    font-size: 15px;
+}
+
+.profile .profile_details .name_job{
+    margin-left: 30px;
+}
+
+
+
+.profile .profile_details .name{
+    /* font-size: 15px; */
+    font-weight: 400;
+}
+/* 
+.profile .profile_details .job{
+    font-size: 12px;
+} */
+
+.profile #log_out{
+    position:  absolute;
+    left: 47px;
+    bottom: 5px;
+    transform: translateX(-50%);
+    min-width: 50px;
+    line-height: 50px;
+    font-size: 30px;
+    border-radius: 12px;
+    transition: all 0.5s ease;    
+}
+.sidebar.sidebar.active .profile #log_out{
+    
+    left: 200px;
+
+}
+
+
+
